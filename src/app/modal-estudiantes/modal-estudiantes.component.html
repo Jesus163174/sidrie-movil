@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Listado de alumnos
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismissModal()">Cerrar</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+            <strong class="">{{contador}} {{title}}</strong>
+        </ion-list-header>
+        <ion-item (click)="perfilAlumnoMateria(estudiante.card)" class="animated fadeInLeft delay-{{ i }}ms" #itemlist *ngFor="let estudiante of estudiantes; let i = index;">
+            <ion-avatar slot="start">
+                <img src="https://image.flaticon.com/icons/png/512/354/354637.png" alt="">
+            </ion-avatar>
+            <ion-label>
+                <h4>{{estudiante.first_name}} {{estudiante.last_name}}</h4>
+                <h4>Matricula: {{estudiante.card}}</h4>
+                <h4>Carrera: {{estudiante.carrera}}</h4>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+     <!-- fab placed to the (vertical) center and end -->
+    <ion-fab (click)="agregarAlumno()" vertical="center" *ngIf="tipo == 'oyente' || tipo=='proceso' || tipo=='convalidantes' " horizontal="end" slot="fixed">
+        <ion-fab-button color="danger">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-content>
+    <div class="banner-wrapper">
+        <img class="wrapper-img" src="https://www.gstatic.com/classroom/themes/img_backtoschool.jpg" alt="">
+        <ion-icon routerLink="/home" class="icon-back" name="arrow-back"></ion-icon>
+    </div>
+    <div class="data-matter">
+        <h3 class="name-matter">{{materia.name}}</h3>
+        <span class="name-teacher">{{materia.carrera}}</span> <br> <br>
+        <ion-badge color="primary">{{fechaactual| date}}</ion-badge>
+    </div>
+    <ion-row>
+        <ion-col size="12">
+            <ion-card>
+                <ion-item class="pointer" (click)="mostrarEstudiantesInscritos()">
+                    <ion-label>Pasar lista</ion-label>
+                </ion-item>
+                <ion-item class="pointer" (click)="mostrarEstudiantesInscritos()">
+                    <ion-label>Alumnos Inscritos</ion-label>
+                </ion-item>
+                <ion-item class="pointer" (click)="mostrarEstudiantesOyentes()">
+                    <ion-label>Alumnos Oyentes</ion-label>
+                </ion-item>
+                <ion-item class="pointer" (click)="mostrarEstudiantesConvalidantes()">
+                    <ion-label>Aumnos Convalidantes</ion-label>
+                </ion-item>
+                <ion-item class="pointer" (click)="mostrarEstudiantesProceso()" >
+                    <ion-label>Alumnos Proceso</ion-label>
+                </ion-item>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>

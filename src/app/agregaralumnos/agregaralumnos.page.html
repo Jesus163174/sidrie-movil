@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="danger">
+      <ion-title>
+          Agregar Alumno
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <ion-item>
+            <ion-icon name="search"></ion-icon>
+            <ion-label>Buscar alumno</ion-label>
+        </ion-item>
+        <ion-card-content>
+            <form (ngSubmit)="buscarAlumno()">
+                <ion-item>
+                    <ion-label  position="floating">Ingresa la matricula del alumno</ion-label>
+                    <ion-input [(ngModel)]="buscar.matricula" name="matricula" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-button type="submit" expand="full" style="width: 100%;"  color="danger">
+                        <ion-icon name="search"></ion-icon> Buscar
+                    </ion-button>
+                </ion-item>
+            </form>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="encontrado">
+        <ion-item>
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>Nuevos alumnos {{tipo}}</ion-label>
+        </ion-item>
+        <ion-card-content>
+            <form  (ngSubmit)="agregarAlumno()">
+                <ion-item>
+                    <ion-label>Alumno: </ion-label>
+                    <ion-badge slot="end">{{alumnoEncontrado.first_name}} {{alumnoEncontrado.last_name}}</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Matricula: </ion-label>
+                    <ion-badge slot="end">{{alumnoEncontrado.card}}</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Materia: </ion-label>
+                    <ion-badge slot="end">Matematicas</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Estatus: </ion-label>
+                    <ion-badge slot="end">{{tipo}}</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-button type="submit" expand="full" style="width: 100%;"  color="danger">Agregar</ion-button>
+                </ion-item>
+            </form>
+        </ion-card-content>
+    </ion-card>      
+</ion-content>

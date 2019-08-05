@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-
+import {ListadomateriasComponent} from '../componentes/listadomaterias/listadomaterias.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +18,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  entryComponents: [ListadomateriasComponent],
+  declarations: [HomePage,ListadomateriasComponent]
 })
 export class HomePageModule {}
